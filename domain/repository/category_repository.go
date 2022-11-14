@@ -32,7 +32,7 @@ func (u *CategoryRepository) InitTable() error {
 	return u.mysqlDb.CreateTable(&model.Category{}).Error
 }
 
-//根据ID查找Category信息
+// FindCategoryByID 根据ID查找Category信息
 func (u *CategoryRepository) FindCategoryByID(categoryID int64) (category *model.Category, err error) {
 	category = &model.Category{}
 	return category, u.mysqlDb.First(category, categoryID).Error

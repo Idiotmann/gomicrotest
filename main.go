@@ -42,6 +42,11 @@ func main() {
 	}
 	defer db.Close()
 	db.SingularTable(true) //禁用表名复数
+
+	//创建表之后，就注释掉
+	//rp := repository.NewCategoryRepository(db)
+	//rp.InitTable() //初始化表
+
 	// Initialise service
 	service.Init()
 	//因为有service服务，所以给自己写的起了别名
